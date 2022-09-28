@@ -4,7 +4,7 @@ resource "google_compute_firewall" "sre-vm" {
 
     allow {
         protocol = "tcp"
-        ports    = ["80","443", "22"] 
+        ports    = ["80","443", "22", "8080", "2877", "2876", "50000"] 
     }
 
     source_ranges = ["0.0.0.0/0"]
