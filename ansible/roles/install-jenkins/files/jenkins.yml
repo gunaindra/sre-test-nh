@@ -1,0 +1,9 @@
+version: '3'
+services:
+  main:
+    image: jenkins/jenkins:latest
+    ports:
+    - ${UI_PORT:-8080}:8080
+    - ${AGENTS_PORT:-50000}:50000
+    environment:
+    - JENKINS_OPTS="--prefix=/jenkins"

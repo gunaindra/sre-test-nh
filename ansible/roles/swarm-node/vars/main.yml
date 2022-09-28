@@ -1,0 +1,5 @@
+---
+# vars file for swarm-init
+swarm_master_user: "indraguna"
+swarm_master_ip: "34.128.100.199"
+worker_token: "SWMTKN-1-4r0fc7yjvov0hbn40jw1h6p25nuh5mf32cbuz6jskb0f7devr7-5zwc8wlzq1azwfypx2u19vxjtss"

@@ -1,0 +1,6 @@
+- name: Add Docker repo
+  become: yes
+  become_user: root
+  get_url:
+    url: "{{ docker_repo }}"
+    dest: /etc/yum.repos.d/docker-ce.repo

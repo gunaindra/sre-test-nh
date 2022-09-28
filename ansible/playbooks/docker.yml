@@ -1,0 +1,7 @@
+---
+- name: Install docker on RHEL
+  hosts: hosts
+  become: yes
+  become_user: root
+  roles:
+    - roles/install-docker

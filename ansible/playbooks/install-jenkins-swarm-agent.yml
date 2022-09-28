@@ -1,0 +1,7 @@
+- name: Install Jenkins Swarm Agent
+  hosts: worker
+  become: yes
+  become_user: root
+  roles:
+    - roles/install-jenkins-swarm-agent
+  

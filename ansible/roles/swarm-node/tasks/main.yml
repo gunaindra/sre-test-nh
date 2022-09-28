@@ -1,0 +1,5 @@
+---
+# tasks file for swarm-node
+- name: Add node to cluster
+  shell: docker swarm join --token {{ worker_token }} {{ swarm_master_ip }}:2377
+  become: true

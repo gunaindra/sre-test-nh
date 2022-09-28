@@ -1,0 +1,7 @@
+- name: Initialization Swarm
+  hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - { role: roles/swarm-init, tags: 'swarm-init' }
+    - { role: roles/swarm-node, tags: 'swarm-node' }

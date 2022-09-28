@@ -1,0 +1,20 @@
+---
+# tasks file for install-jenkins
+# - name: Copy jenkins.yml
+#   copy: 
+#     src: jenkins.yml
+#     dest: /home/{{ ansible_user }}/jenkins.yml
+#     mode: 0755
+
+# - name: Create Jenkins Container
+#   shell: docker stack deploy -c /home/{{ ansible_user }}/jenkins.yml jenkins
+#   become: true
+
+- name: Transfer install script
+  copy: 
+    src: install_jenkins_swarm_agent.sh 
+    dest: /home/indraguna/install_jenkins_swarm_agent.sh 
+    mode: 0777
+
+- name: Execute install script
+  command: sh /home/indraguna/install_jenkins_swarm_agent.sh 

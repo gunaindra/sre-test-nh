@@ -1,0 +1,4 @@
+---
+# vars file for swarm-init
+ansible_user: "indraguna"
+swarm_master_ip: "34.128.100.199"

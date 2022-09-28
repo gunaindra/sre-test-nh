@@ -1,0 +1,15 @@
+- name: Install Docker
+  package:
+    name: docker-ce
+    state: latest
+    
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+- name: Add user to docker group
+  user:
+    name: indraguna
+    groups: docker
+    append: yes
