@@ -58,7 +58,7 @@
         sh '''
             docker network rm docker-swarm-app || true
             docker network create --driver overlay --attachable docker-swarm-app
-            docker stack deploy --compose-file=swarm-app/docker-compose.yml  
+            docker stack deploy --compose-file=swarm-app/docker-compose.yml swarm-app
           '''
       }catch(e) {
         error "Service update failed in production"
