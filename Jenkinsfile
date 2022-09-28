@@ -52,6 +52,8 @@
 //   }
 
   node("docker-prod") {
+    checkout scm
+    
     stage("Production") {
       try {
         // Create the service if it doesn't exist otherwise just update the image
