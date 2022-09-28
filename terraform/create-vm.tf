@@ -139,34 +139,6 @@ resource "google_compute_instance" "chef-server" {
 
     metadata_startup_script  = "${file("node_init.sh")}"
 
-    # provisioner "file" {
-    #     source = "install_chef_server.sh"
-    #     destination = "/home/indraguna/install_chef_server.sh"
-
-    #     connection {
-    #         host = google_compute_address.static-chef-server.address
-    #         type = "ssh"
-    #         user = "indraguna"
-    #         private_key = "${file("~/.ssh/id_rsa")}"
-    #         agent = false
-    #     }
-    # }
-
-    # provisioner "remote-exec" {
-    #   connection {
-    #         host = google_compute_address.static-chef-server.address
-    #         type = "ssh"
-    #         user = "indraguna"
-    #         private_key = "${file("~/.ssh/id_rsa")}"
-    #         agent = false
-    #   }
-
-    #   inline = [
-    #     "sudo chmod +x /home/indraguna/install_chef_server.sh",
-    #     "sudo bash /home/indraguna/install_chef_server.sh"
-    #   ]
-    # }
-
     tags = ["sre-vm"]
 }
 
