@@ -27,10 +27,10 @@
         error "Service update failed in production"
       }finally {
         sh '''
-            docker service scale=3 swarm-app_redis01 || true
-            docker service scale=3 swarm-app_results-app || true
-            docker service scale=3 swarm-app_vote-worker || true
-            docker service scale=3 swarm-app_web-vote-app || true
+            docker service scale swarm-app_redis01=3 || true
+            docker service scale swarm-app_results-app=3 || true
+            docker service scale swarm-app_vote-worker=3 || true
+            docker service scale swarm-app_web-vote-app=3 || true
           '''
       }
     }
