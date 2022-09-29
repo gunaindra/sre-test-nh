@@ -6,18 +6,21 @@ version: '3'
 
 services:
   web-vote-app:
+    image: python:2.7-slim
     build: web-vote-app
     environment:
       WEB_VOTE_NUMBER: "01"
       constraint:node: "=frontend01"
 
   vote-worker:
+    image: bitnami/java:17.0.0
     build: vote-worker
     environment:
       FROM_REDIS_HOST: 1
       TO_REDIS_HOST: 1
 
   results-app:
+    image: node:10.0.0-alpine
     build: results-app
 
   redis01:
