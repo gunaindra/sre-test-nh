@@ -1,0 +1,5 @@
+---
+# vars file for jenkins-swarm-agent
+jenkins_master_ip : "34.128.100.199"
+admin: "admin"
+password: "admin"

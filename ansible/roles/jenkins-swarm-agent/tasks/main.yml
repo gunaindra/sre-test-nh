@@ -1,0 +1,21 @@
+---
+# tasks file for jenkins-swarm-agent
+- name: Download Jenkins Swarm Agent from Master
+  get_url:
+    url: http://{{ jenkins_master_ip }}:8080/jenkins/swarm/swarm-client.jar
+    dest: /root
+    mode: 0770
+
+- name: install screen
+  yum:
+    name: screen
+    state: latest
+
+- name: Install OpenJRE 11
+  yum:
+    name: java-11-openjdk
+    state: latest
+
+- name: Run Jenkins Swarm Agent on screen
+  shell: screen -mdS swarm-agent java -jar /root/swarm-client.jar -url http://{{jenkins_master_ip }}:8080/jenkins -username {{ admin }} -password {{ admin }}
+  become: true
