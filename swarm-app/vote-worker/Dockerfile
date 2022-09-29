@@ -1,4 +1,4 @@
-FROM java:7
+FROM bitnami/java:17.0.0
 
 RUN apt-get update -qq && apt-get install -y maven && apt-get clean
 
