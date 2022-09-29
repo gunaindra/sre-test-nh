@@ -26,12 +26,12 @@
       }catch(e) {
         error "Service update failed in production"
       }finally {
-        sh '''
-            docker service scale swarm-app_redis01=3 || true
-            docker service scale swarm-app_results-app=3 || true
-            docker service scale swarm-app_vote-worker=3 || true
-            docker service scale swarm-app_web-vote-app=3 || true
-          '''
+        // sh '''
+        //     docker service scale swarm-app_redis01=3 || true
+        //     docker service scale swarm-app_results-app=3 || true
+        //     docker service scale swarm-app_vote-worker=3 || true
+        //     docker service scale swarm-app_web-vote-app=3 || true
+        //   '''
       }
     }
   }
