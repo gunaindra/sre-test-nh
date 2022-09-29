@@ -9,7 +9,6 @@
         error "Staging failed"
       } finally {
         sh "docker stack rm swarm-app-test"
-        sh "docker images -aq -f dangling=true | xargs docker rmi || true"
       }
     }
   }
